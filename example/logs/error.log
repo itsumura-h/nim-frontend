@@ -1,0 +1,4 @@
+E, [2022-06-18T09:34:58] -- main: 404 Not Found  192.168.240.1  GET  /public/js/hello_nim.js
+E, [2022-06-18T09:35:48] -- main: 404 Not Found  192.168.240.1  GET  /public/js/hello_nim.js
+E, [2022-06-18T09:36:33] -- main: 404 Not Found  192.168.240.1  GET  /public/js/hello_nim.js
+E, [2022-06-18T09:36:42] -- main: 404 Not Found  192.168.240.1  GET  /public/basolato.svg
