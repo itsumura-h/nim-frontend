@@ -7,6 +7,6 @@
 
 import unittest
 
-import application
-test "can add":
-  check add(5, 5) == 10
+import applicationpkg/submodule
+test "correct welcome":
+  check getWelcomeMessage() == "Hello, World!"

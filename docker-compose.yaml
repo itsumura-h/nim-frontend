@@ -7,3 +7,4 @@ services:
       - 9000:9000
     volumes:
       - .:/application
+      - ./docker/app/app.conf:/etc/nginx/conf.d/app.conf
