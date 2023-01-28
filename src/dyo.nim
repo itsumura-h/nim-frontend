@@ -1,4 +1,4 @@
-import ./js_definitions
+import ./packages/js_definitions
 
 # proc hImpl(a:cstring, b:JsObject, c:cstring):JsObject {.importcpp: "h(#, #, #)".}
 # proc h*(a="", b=newJsObject(), c=""):JsObject = hImpl(a.cstring, b, c.cstring)
@@ -32,4 +32,4 @@ template render*(a, b:string) =
 #   result.add(");")
 
 proc renderImpl(a:proc():string, b:cstring) {.importjs: "render(h(#), #);".}
-proc render*(a:proc():string, b:string) {.exportc.} = renderImpl(a, b.cstring)
+proc render*(a:proc():string, b:JsObject) {.exportc.} = renderImpl(a, b.repr)

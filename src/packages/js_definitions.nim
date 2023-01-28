@@ -1,20 +1,10 @@
-import
-  std/jsffi,
-  std/jsfetch,
-  std/jscore,
-  std/asyncjs,
-  std/jsconsole,
-  ./fusion/jsexports,
-  ./fusion/esimport
-
-export
-  jsffi,
-  jsfetch,
-  jscore,
-  asyncjs,
-  jsconsole,
-  jsexports,
-  esimport
+import std/jsffi; export jsffi
+import std/jsfetch; export jsfetch
+import std/jscore; export jscore
+import std/asyncjs; export asyncjs
+import std/jsconsole; export jsconsole
+import ./fusion/jsexports; export jsexports
+import ./fusion/esimport; export esimport
 
 var
   module* {.importc, nodecl.}: JsObject
