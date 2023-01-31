@@ -29,10 +29,16 @@ proc useState*(arg: int): (int, IntSateSetter) =
 type States = cstring|int
 
 proc useEffect*(cb: proc()) {.importcpp: "useEffect(#)".}
-  ## Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
-  ## Whether or not you’re used to calling these operations “side effects” (or just “effects”), you’ve likely performed them in your components before.
+  ## Side-Effects are at the heart of many modern Apps.
+  ## Whether you want to fetch some data from an API or trigger an effect on the document, you'll find that the useEffect fits nearly all your needs.
+  ## It's one of the main advantages of the hooks API, that it reshapes your mind into thinking in effects instead of a component's lifecycle.
 proc useEffect*(cb: proc(), dependency:seq[States]) {.importcpp: "useEffect(#, #)".}
-  ## effect with dependancy
+  ## With Dependancy
+  ##
+  ## Side-Effects are at the heart of many modern Apps.
+  ## Whether you want to fetch some data from an API or trigger an effect on the document, you'll find that the useEffect fits nearly all your needs.
+  ## It's one of the main advantages of the hooks API, that it reshapes your mind into thinking in effects instead of a component's lifecycle.
+
 
 template render*(arg: string) =
   proc renderImpl(innerArg: string): string =

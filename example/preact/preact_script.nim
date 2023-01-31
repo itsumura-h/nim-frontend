@@ -1,5 +1,6 @@
 import std/jsffi
 import std/dom
+import std/sequtils
 import ../../src/preact
 
 
@@ -28,10 +29,25 @@ proc child(props: JsObject) {.exportc.} =
     </form>
   """)
 
+proc loop() {.exportc.} =
+  let values = @["a","b","c","d","e"]
+  let cvalues{.exportc.} = values.map(
+    proc(row:string):cstring =
+      return row.cstring
+  )
+  render("""
+    <ul>
+      ${cvalues.map(value=>{
+        return html``<li>${value}</li>``
+      })}
+    </ul>
+  """)
+
 proc App() {.exportc.} =
   render("""
     <h1>Hello</h1>
     <${child} name="John"/>
+    <${loop} />
   """)
 
 renderApp(App, document.getElementById("app"))
